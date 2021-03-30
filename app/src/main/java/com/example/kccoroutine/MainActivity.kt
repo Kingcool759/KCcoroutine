@@ -69,14 +69,27 @@ class MainActivity : AppCompatActivity() {
         }
 
 //        GlobalScope.launch(Dispatchers.Main){
+//            //launch里边被包着的代码块就叫做协程，也就是下面两行
 //            val data = getData()
 //            priceTv.text = data.price
 //        }
-//
+//        /**
+//         * suspend意为挂起
+//         * 使用withContext函数的时候需要将方法声明为可挂起状态
+//         * 挂起：
+//         * 既能切线程又能自动切回来的
+//         */
 //        suspend fun getData():Data{
 //            return withContext(Dispatchers.IO){
 //                ApiService.getData()
 //            }
+//        }
+
+//        GlobalScope.launch(Dispatchers.main){
+//            val data = withContext(Dispatchers.IO){
+//                apiService.getData()
+//            }
+//            priceTv.text = data.price
 //        }
     }
 }
